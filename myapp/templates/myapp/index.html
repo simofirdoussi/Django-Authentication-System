@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index page</title>
+</head>
+<body>
+    <h1>this is the login page</h1>
+    {% if request.user.is_authenticated %}
+        <h3> hello {{request.user}}</h3>
+        <li><a href="{%url 'logout'%}">Logout</a> </li>
+    {% else %}
+    <li><a href="{%url 'register'%}">Register</a> </li>
+    <li><a href="{%url 'login'%}">Login</a></li>
+    {% endif %}
+</body>
+</html>
